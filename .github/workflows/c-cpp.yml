@@ -13,12 +13,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: check make file 
-      run: cat -e -t -v  makefile
     - name: make
       run: make
     - name: make check
-      working-directory: alarm
       run: make check
     - name: make distcheck
       run: make distcheck
