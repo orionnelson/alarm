@@ -5,7 +5,7 @@ TESTS := expr unrecognised
 
 .PHONY: test
 test:
-	for test in $(TESTS); do bash test-runner.sh $$test || exit 1; done
+	for test in $(TESTS); do bash test-alarm.sh $$test || exit 1; done
 
 
 
