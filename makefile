@@ -1,9 +1,9 @@
 all:
-  cc My_Alarm1.c -D_POSIX_PTHREAD_SEMANTICS -lpthread 
+          cc My_Alarm1.c -D_POSIX_PTHREAD_SEMANTICS -lpthread
 
-TESTS := expr unrecognised
+
+check := expr unrecognised
 
 .PHONY: test
 test:
-  for test in $(TESTS); do bash test-runner.sh $$test || exit 1; done
-
+          for test in $(check); do bash test-runner.sh $$test || exit 1; done
