@@ -18,6 +18,7 @@ jobs:
     - name: make
       run: make
     - name: make check
+      working-directory: alarm
       run: make check
     - name: make distcheck
       run: make distcheck
