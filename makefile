@@ -4,7 +4,7 @@ all:
 TESTS := expr unrecognised
 
 .PHONY: test
-test:
+check:
 	for test in $(TESTS); do bash test-alarm.sh $$test || exit 1; done
 
 
