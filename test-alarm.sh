@@ -3,7 +3,7 @@ set -e
 ./a.out < $1.test > $1.out 2>&1
 
 for i in $n_procs; do
-    ./procs[${i}] &
+    ./procs[${i}] >> $1.out &
     pids[${i}]=$!
 done
 
