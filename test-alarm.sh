@@ -12,5 +12,9 @@ done
 for pid in ${pids[*]}; do
     wait $pid
 done
+echo "Running Test Case $1"
+echo "Looking For Expected Output :  $(<$1.exp)"
+echo "Recived Output : $(<$1.out)"
+
 
 diff -q $1.exp $1.out
