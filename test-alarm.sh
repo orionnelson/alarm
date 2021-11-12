@@ -11,7 +11,7 @@ done
 for pid in ${pids[*]}; do
     wait $pid
 done
-printf "\n\nRunning Test Case $1 $(<$1.test) \n\n" 
+printf "\n\nRunning Test Case $1 \n Input is :  $(<$1.test) \n\n" 
 printf "\nLooking For Expected Output :\n  $(<$1.exp)\n"
 printf "\nRecived Output :\n $(<$1.out)\n"
 
