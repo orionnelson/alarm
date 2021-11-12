@@ -1,5 +1,5 @@
 all:
-	cc new_alarm_mutex.c -D_POSIX_PTHREAD_SEMANTICS -lpthread
+	cc My_Alarm1.c -D_POSIX_PTHREAD_SEMANTICS -lpthread
 
 TESTS := test1
 
