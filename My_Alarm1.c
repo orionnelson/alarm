@@ -176,7 +176,7 @@ void *display_thread_2(void *arg)
 	    err_abort(status, "Wait on cond");
         alarm = current_alarm;
 	/* Message to indicate that display thread 2 has received the alarm */
-    fprintf(stdout "Display Thread 2: Recieved Alarm Request Number:(%d) Alarm Request: <%s> \n",alarm->Alarm_Request_Number,alarm->message);
+    fprintf(stdout, "Display Thread 2: Recieved Alarm Request Number:(%d) Alarm Request: <%s> \n",alarm->Alarm_Request_Number,alarm->message);
 
 	now = time (NULL);
 	/* While the alarm has yet to expiry, print a message every 2 seconds */
