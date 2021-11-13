@@ -219,7 +219,7 @@ int main (int argc, char *argv[])
     while (1) {
         printf ("alarm> ");
 	    
-        if (fgets (line, sizeof (line), stdin) == NULL) exit (0);
+        if (fgets (line, sizeof (line), stdin) == NULL) { fflush(stdout); exit (0); }
         if (strlen (line) <= 1) continue;
         alarm = (alarm_t*)malloc (sizeof (alarm_t));
         if (alarm == NULL)
