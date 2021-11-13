@@ -14,6 +14,18 @@
 #include <time.h>
 #include "errors.h"
 
+
+
+
+void flush_output () {
+    fflush(stdout);
+    fflush(stderr);
+    std::cout.flush();
+    std::cerr.flush();
+}
+
+
+
 /*
  * The "alarm" structure now contains the time_t (time since the
  * Epoch, in seconds) for each alarm, so that they can be
@@ -88,7 +100,7 @@ void *alarm_thread (void *arg)
 		 * Message to indicate that the current alarm has been passed to
 		 * display thread 2
 		 */
-		fprintf(stdout, "Alarm Thread Passed on Alarm Request to Display Thread 2 Alarm Request Number: (%d) Alarm Request: %s \n", alarm->Alarm_Request_Number, alarm->message);
+		fprintf(sterr, "Alarm Thread Passed on Alarm Request to Display Thread 2 Alarm Request Number: (%d) Alarm Request: %s \n", alarm->Alarm_Request_Number, alarm->message);
 		/* Wake up display thread 2 to process the current alarm */
 		status = pthread_cond_signal(&d2_cond);
 		if (status != 0)
