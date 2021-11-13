@@ -17,13 +17,6 @@
 
 
 
-void flush_output () {
-    fflush(stdout);
-    fflush(stderr);
-    std::cout.flush();
-    std::cerr.flush();
-}
-
 
 
 /*
