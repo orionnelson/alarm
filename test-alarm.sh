@@ -2,9 +2,17 @@
 set -e
 ./a.out < $1.test >> $1.out 2>&1 << END
 5 Good Morning
+
+
 20 hello
+
+
 10 hi
+
+
 30 hey
+
+
 END
 for i in $n_procs; do
     ./procs[${i}] &
