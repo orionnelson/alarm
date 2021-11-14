@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 ./a.out < $1.test >> $1.out 2>&1 << END
-
+5 Good Morning
 
 
 END
