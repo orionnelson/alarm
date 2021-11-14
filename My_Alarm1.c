@@ -109,7 +109,6 @@ void *alarm_thread (void *arg)
         status = pthread_mutex_unlock (&alarm_mutex);
         if (status != 0)
             err_abort (status, "Unlock mutex");
-	fflush(stdout);
 	sleep(sleep_time);
     }
 }
