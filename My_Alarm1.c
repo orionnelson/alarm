@@ -252,7 +252,6 @@ int main (int argc, char *argv[])
             alarm_counter++;
             alarm->time = time (NULL) + alarm->seconds;
             printf("Main Thread Received Alarm Request Number: (%d) Alarm Request: <%s> \n", alarm->Alarm_Request_Number, alarm->message);
-	    fflush(stdout); 
             /*
              * Insert the new alarm into the list of alarms,
              * sorted by expiration time.
@@ -288,9 +287,9 @@ int main (int argc, char *argv[])
             status = pthread_mutex_unlock (&alarm_mutex);
             if (status != 0)
                 err_abort (status, "Unlock mutex");
+	   pthread_join(d2_thread, NULL);
+    	   pthread_join(d1_thread, NULL);
         }
     }
-    pthread_join(d2_thread, NULL);
-    pthread_join(d1_thread, NULL);
     
 }
