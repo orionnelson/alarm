@@ -275,9 +275,9 @@ int main (int argc, char *argv[])
              */
             if (next == NULL) {
                 *last = alarm;
-                alarm->link  
+                alarm->link = NULL;  
 	       pthread_join(d2_thread, NULL);
-    	       pthread_join(d1_thread, NULL);= NULL;
+    	       pthread_join(d1_thread, NULL);
 		
             }
 #ifdef DEBUG
