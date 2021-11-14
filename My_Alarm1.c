@@ -225,7 +225,6 @@ int main (int argc, char *argv[])
 	err_abort (status, "Create display thread 2");
     while (1) {
         fprintf (stdout,"alarm> ");
-	setbuf(stdout, NULL);
         if (fgets (line, sizeof (line), stdin) == NULL) { fflush(stdout); exit (0); }
         if (strlen (line) <= 1) continue;
         alarm = (alarm_t*)malloc (sizeof (alarm_t));
