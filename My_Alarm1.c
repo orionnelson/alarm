@@ -263,6 +263,7 @@ int main (int argc, char *argv[])
                     *last = alarm;
                     break;
                 }
+		fflush(stdout);
                 last = &next->link;
                 next = next->link;
             }
