@@ -153,6 +153,7 @@ void *display_thread_1(void *arg)
     	if (status != 0)
 	    err_abort(status, "unlock mutex");
 	free(alarm);
+	pthread_exit(NULL);
      }
 }
 
