@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
-./a.out < $1.test > $1.out 2>&1
+./a.out < $1.test > $1.out 2>&1 << END
 
 for i in $n_procs; do
     ./procs[${i}] &
