@@ -1,7 +1,7 @@
 all:
 	cc My_Alarm1.c -D_POSIX_PTHREAD_SEMANTICS -lpthread
 
-TESTS := test1
+TESTS := test/test1 test/test2
 
 .PHONY: test
 check:

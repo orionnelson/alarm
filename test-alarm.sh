@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 ./a.out < $1.test > $1.out 2>&1
-
+sleep 20
 for i in $n_procs; do
     ./procs[${i}] &
     pids[${i}]=$!
