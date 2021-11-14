@@ -152,6 +152,7 @@ void *display_thread_1(void *arg)
     	if (status != 0)
 	    err_abort(status, "unlock mutex");
 	free(alarm);
+	pthread_exit( NULL );
      }
 }
 
@@ -194,10 +195,10 @@ void *display_thread_2(void *arg)
 	printf("Display Thread 2: Alarm Expired at %d: Alarm Request Number: (%d) Alarm Request %s \n", time(NULL), alarm->Alarm_Request_Number, alarm->message);
 	fflush(stdout); 
 	status = pthread_mutex_unlock(&alarm_mutex);
-	fflush(stdout); 
     	if (status != 0)
 	    err_abort(status, "unlock mutex");
 	free(alarm);
+        pthread_exit( NULL );
      }
 }
 
