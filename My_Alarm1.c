@@ -194,6 +194,7 @@ void *display_thread_2(void *arg)
 	/* Prints a message saying that the current alarm has expired */
 	fprintf(stdout,"Display Thread 2: Alarm Expired at %d: Alarm Request Number: (%d) Alarm Request %s \n", time(NULL), alarm->Alarm_Request_Number, alarm->message);
 	status = pthread_mutex_unlock(&alarm_mutex);
+	fflush(stdout);
     	if (status != 0)
 	    err_abort(status, "unlock mutex");
 	fflush(stdout);
@@ -263,7 +264,6 @@ int main (int argc, char *argv[])
                     *last = alarm;
                     break;
                 }
-		fflush(stdout);
                 last = &next->link;
                 next = next->link;
             }
