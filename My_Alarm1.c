@@ -275,7 +275,10 @@ int main (int argc, char *argv[])
              */
             if (next == NULL) {
                 *last = alarm;
-                alarm->link = NULL;
+                alarm->link  
+	       pthread_join(d2_thread, NULL);
+    	       pthread_join(d1_thread, NULL);= NULL;
+		
             }
 #ifdef DEBUG
             printf ("[list: ");
@@ -287,8 +290,6 @@ int main (int argc, char *argv[])
             status = pthread_mutex_unlock (&alarm_mutex);
             if (status != 0)
                 err_abort (status, "Unlock mutex");
-	   pthread_join(d2_thread, NULL);
-    	   pthread_join(d1_thread, NULL);
         }
     }
     
