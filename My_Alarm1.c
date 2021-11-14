@@ -152,8 +152,8 @@ void *display_thread_1(void *arg)
 	status = pthread_mutex_unlock(&alarm_mutex);
     	if (status != 0)
 	    err_abort(status, "unlock mutex");
+	fflush(stdout);
 	free(alarm);
-	pthread_exit(NULL);
      }
 }
 
@@ -196,6 +196,7 @@ void *display_thread_2(void *arg)
 	status = pthread_mutex_unlock(&alarm_mutex);
     	if (status != 0)
 	    err_abort(status, "unlock mutex");
+	fflush(stdout);
 	free(alarm);
      }
 }
