@@ -82,7 +82,6 @@ void *alarm_thread (void *arg)
 		 * display thread 1
 		 */
 	   	fprintf(stdout, "Alarm Thread Passed on Alarm Request to Display Thread 1 Alarm Request Number: (%d) Alarm Request: %s \n ", alarm->Alarm_Request_Number, alarm->message);
-		fflush(stdout);
 		/* Wake up display thread 1 to process the current alarm */
 		status = pthread_cond_signal(&d1_cond);
 		if (status != 0)
@@ -95,7 +94,6 @@ void *alarm_thread (void *arg)
 		 * display thread 2
 		 */
 		fprintf(stderr, "Alarm Thread Passed on Alarm Request to Display Thread 2 Alarm Request Number: (%d) Alarm Request: %s \n", alarm->Alarm_Request_Number, alarm->message);
-		fflush(stdout);
 		/* Wake up display thread 2 to process the current alarm */
 		status = pthread_cond_signal(&d2_cond);
 		if (status != 0)
@@ -141,7 +139,6 @@ void *display_thread_1(void *arg)
         alarm = current_alarm;
 	/* Message to indicate that display thread 1 has received the alarm */
 	fprintf(stdout, "Display Thread 1: Recieved Alarm Request Number:(%d) Alarm Request: <%s> \n",alarm->Alarm_Request_Number,alarm->message);
-	fflush(stdout);
 	now = time (NULL);
 	/* While the alarm has yet to expiry, print a message every 2 seconds */
 	while(alarm->time > time (NULL))
@@ -151,7 +148,6 @@ void *display_thread_1(void *arg)
 	}
 	/* Prints a message saying that the current alarm has expired */
     fprintf(stdout,"Display Thread 1: Alarm Expired at %d: Alarm Request Number: (%d) Alarm Request %s \n",time(NULL), alarm->Alarm_Request_Number, alarm->message);
-    fflush(stdout);
 
 	status = pthread_mutex_unlock(&alarm_mutex);
     	if (status != 0)
@@ -187,14 +183,12 @@ void *display_thread_2(void *arg)
         alarm = current_alarm;
 	/* Message to indicate that display thread 2 has received the alarm */
     fprintf(stdout, "Display Thread 2: Recieved Alarm Request Number:(%d) Alarm Request: <%s> \n",alarm->Alarm_Request_Number,alarm->message);
-    fflush(stdout);
 
 	now = time (NULL);
 	/* While the alarm has yet to expiry, print a message every 2 seconds */
 	while(alarm->time > time (NULL))
 	{
 	    fprintf(stdout, "Display Thread 2: Number of SecondsLeft <%d>: Alarm Request Number: (%d) Alarm Request: <%s> \n", alarm->seconds, alarm->Alarm_Request_Number,alarm->message);
-            fflush(stdout);
 	    sleep(2);
 	}
 	/* Prints a message saying that the current alarm has expired */
