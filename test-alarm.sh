@@ -1,7 +1,10 @@
 #!/bin/sh
 set -e
-./a.out < $1.test > $1.out 2>&1 << END
+./a.out < $1.test >> $1.out 2>&1 << END
 
+
+
+END
 for i in $n_procs; do
     ./procs[${i}] &
     pids[${i}]=$!
