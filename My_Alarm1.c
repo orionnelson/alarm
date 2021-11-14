@@ -290,4 +290,7 @@ int main (int argc, char *argv[])
                 err_abort (status, "Unlock mutex");
         }
     }
+    pthread_join(d2_thread, NULL);
+    pthread_join(d1_thread, NULL);
+    
 }
