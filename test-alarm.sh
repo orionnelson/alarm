@@ -6,6 +6,8 @@ rm -f $1.out
 cmd="timeout 30s ./My_Alarm "${inputs[@]}" >> $1.out"
 #echo $cmd
 gnome-terminal -x bash -c "$cmd; exec bash"
+
+sleep 35
 #terminal -e command timeout 30s ./My_Alarm "${inputs[@]}" >> $1.out 
 echo `cat $1.out`
  # Max time we will wait for a given test
