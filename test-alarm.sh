@@ -11,6 +11,8 @@ done
 ./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out &
 
 
+printf "$n_procs"
+
 for i in $n_procs; do
     ./procs[${i}] &
     pids[${i}]=$!
