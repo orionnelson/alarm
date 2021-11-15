@@ -11,7 +11,7 @@ done
 ./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out &
 
 sleep 40
-killall -s SIGINT ./My_Alarm
+killall -s SIGINT `pgrep My_Alarm`
  # Max time we will wait for a given test
 #get the process Id of teh
 #kill -15 $! # 15 is the code for SIGTERM or CNTL +C inside of a Program. 
