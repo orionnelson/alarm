@@ -1,9 +1,7 @@
 #!/bin/sh
 set -e
 
-
-text=`cat $1.test`
-./a.out $text >> $1.out 2>&1 
+./a.out `cat $1.test` >> $1.out 2>&1 
 pid=`pidof a.out`
 sleep 100 # Max time we will wait for a given test
 #get the process Id of teh
