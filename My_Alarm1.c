@@ -76,7 +76,7 @@ void *alarm_thread (void *arg)
 		 * Message to indicate that the current alarm has been passed to
 		 * display thread 1
 		 */
-	   	printf("Alarm Thread Passed on Alarm Request to Display Thread 1 Alarm Request Number: (%d) Alarm Request: %s \n ", alarm->Alarm_Request_Number, alarm->message);
+	   	fprintf(stdout,"Alarm Thread Passed on Alarm Request to Display Thread 1 Alarm Request Number: (%d) Alarm Request: %s \n ", alarm->Alarm_Request_Number, alarm->message);
 		/* Wake up display thread 1 to process the current alarm */
 		status = pthread_cond_signal(&d1_cond);
 		if (status != 0)
@@ -88,7 +88,7 @@ void *alarm_thread (void *arg)
 		 * Message to indicate that the current alarm has been passed to
 		 * display thread 2
 		 */
-		printf("Alarm Thread Passed on Alarm Request to Display Thread 2 Alarm Request Number: (%d) Alarm Request: %s \n", alarm->Alarm_Request_Number, alarm->message);
+		fprintf(stdout,"Alarm Thread Passed on Alarm Request to Display Thread 2 Alarm Request Number: (%d) Alarm Request: %s \n", alarm->Alarm_Request_Number, alarm->message);
 		/* Wake up display thread 2 to process the current alarm */
 		status = pthread_cond_signal(&d2_cond);
 		if (status != 0)
@@ -133,17 +133,17 @@ void *display_thread_1(void *arg)
 	    err_abort(status, "Wait on cond");
         alarm = current_alarm;
 	/* Message to indicate that display thread 1 has received the alarm */
-	printf( "Display Thread 1: Recieved Alarm Request Number:(%d) Alarm Request: <%s> \n",alarm->Alarm_Request_Number,alarm->message);
+	fprintf(stdout, "Display Thread 1: Recieved Alarm Request Number:(%d) Alarm Request: <%s> \n",alarm->Alarm_Request_Number,alarm->message);
 	now = time (NULL);
 	/* While the alarm has yet to expiry, print a message every 2 seconds */
 	while(alarm->time > time (NULL))
 	{
-        printf( "Display Thread 1: Number of SecondsLeft <%d>: Alarm Request Number: (%d) Alarm Request: <%s> \n", alarm->seconds, alarm->Alarm_Request_Number,alarm->message);
+        fprintf(stdout, "Display Thread 1: Number of SecondsLeft <%d>: Alarm Request Number: (%d) Alarm Request: <%s> \n", alarm->time - time (NULL), alarm->Alarm_Request_Number,alarm->message);
 	    sleep(2);
 	}
 	/* Prints a message saying that the current alarm has expired */
-    printf("Display Thread 1: Alarm Expired at %d: Alarm Request Number: (%d) Alarm Request %s \n",time(NULL), alarm->Alarm_Request_Number, alarm->message);
-    	//printf("\n\n This is stdout \n\n %s" ,stdout);
+    fprintf(stdout,"Display Thread 1: Alarm Expired at %d: Alarm Request Number: (%d) Alarm Request %s \n",time(NULL), alarm->Alarm_Request_Number, alarm->message);
+        fflush(stdout);
 	status = pthread_mutex_unlock(&alarm_mutex);
     	if (status != 0)
 	    err_abort(status, "unlock mutex");
@@ -176,13 +176,13 @@ void *display_thread_2(void *arg)
 	    err_abort(status, "Wait on cond");
         alarm = current_alarm;
 	/* Message to indicate that display thread 2 has received the alarm */
-    fprintf(stdout, "Display Thread 2: Recieved Alarm Request Number:(%d) Alarm Request: <%s> \n",alarm->Alarm_Request_Number,alarm->message);
+        fprintf(stdout, "Display Thread 2: Recieved Alarm Request Number:(%d) Alarm Request: <%s> \n",alarm->Alarm_Request_Number,alarm->message);
 
 	now = time (NULL);
 	/* While the alarm has yet to expiry, print a message every 2 seconds */
 	while(alarm->time > time (NULL))
 	{
-	    fprintf(stdout, "Display Thread 2: Number of SecondsLeft <%d>: Alarm Request Number: (%d) Alarm Request: <%s> \n", alarm->seconds, alarm->Alarm_Request_Number,alarm->message);
+	    fprintf(stdout, "Display Thread 2: Number of SecondsLeft <%d>: Alarm Request Number: (%d) Alarm Request: <%s> \n", alarm->time - time (NULL), alarm->Alarm_Request_Number,alarm->message);
 	    sleep(2);
 	}
 	/* Prints a message saying that the current alarm has expired */
@@ -197,22 +197,13 @@ void *display_thread_2(void *arg)
 
 int main (int argc, char *argv[])
 {
-
     int status;
     char line[128];
-    char line2[128];
     alarm_t *alarm, **last, *next;
     pthread_t a_thread; /* Alarm thread */
     pthread_t d1_thread; /* Display thread 1 */
     pthread_t d2_thread; /* Display thread 2 */
     int alarm_counter = 1;
-    
-    //List Command Line args 
-    
-     for(int i=0; i < argc; i++) {
-    printf("Command line arg %2d: %s\n", i, argv[i]);
-  }
-  //hidden declaration
     int i = 0;
 
     status = pthread_create (
@@ -227,28 +218,24 @@ int main (int argc, char *argv[])
 	&d2_thread, NULL, display_thread_2, NULL);
     if (status != 0)
 	err_abort (status, "Create display thread 2");
-    while (line != "QUIT") {
+    while (1) {
         printf ("alarm> ");
         
-        
-        
-        if (fgets (line, sizeof (line), stdin) == NULL) exit (0);
-        
-        
-        
-        /** 
-        
-        The below line checks for argv input and appends argv to the list of commands to run.
-        it is not properly working yet requires pressing enter and will override arguments
-        
-        
+        /* Check Standard Input and Make Sure that all standard input args are carried across start the program after stdin is set to line and iterated on each version of i;
         */
         int sz = argc;
         if (sz > 1 && sz > (i+1)){
         strcpy(line,argv[i+1]);
         i++;
+        }else{
+        if (fgets (line, sizeof (line), stdin) == NULL) exit (0);
+        
         }
-        //if(line2 != NULL) use line2 as the version 
+        /* 
+        Allocate Alarm Space and make sure that the size of line is >1
+        */
+        
+        
         if (strlen (line) <= 1) continue;
         alarm = (alarm_t*)malloc (sizeof (alarm_t));
         if (alarm == NULL)
@@ -273,7 +260,7 @@ int main (int argc, char *argv[])
             alarm->Alarm_Request_Number = alarm_counter;
             alarm_counter++;
             alarm->time = time (NULL) + alarm->seconds;
-            printf("Main Thread Received Alarm Request Number: (%d) Alarm Request: <%s> \n", alarm->Alarm_Request_Number, alarm->message);
+            fprintf(stdout,"Main Thread Received Alarm Request Number: (%d) Alarm Request: <%s> \n", alarm->Alarm_Request_Number, alarm->message);
             /*
              * Insert the new alarm into the list of alarms,
              * sorted by expiration time.
@@ -310,8 +297,5 @@ int main (int argc, char *argv[])
             if (status != 0)
                 err_abort (status, "Unlock mutex");
         }
-          
     }
-    pthread_join(d2_thread, NULL);
-    pthread_join(d1_thread, NULL);
 }
