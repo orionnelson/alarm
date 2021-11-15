@@ -2,10 +2,10 @@
 set -e
 
 
-text =`cat $1.test`
+text=`cat $1.test`
 echo $text
 ./a.out $text >> $1.out 2>&1 
-pid = pidof a.out
+pid=`pidof a.out`
 sleep 100 # Max time we will wait for a given test
 #get the process Id of teh
 wait -n
