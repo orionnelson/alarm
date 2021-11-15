@@ -1,17 +1,18 @@
 #!/bin/sh
 set -e
-./a.out < $1.test >> $1.out 2>&1 
 
 
-for i in $n_procs; do
-    ./procs[${i}] &
-    pids[${i}]=$!
-done
+text =`cat $1.test`
+echo $text
+./a.out $text >> $1.out 2>&1 
+pid = pidof a.out
+sleep 100 # Max time we will wait for a given test
+#get the process Id of teh
+wait -n
+wait -n 
+kill -15 $pid # 15 is the code for SIGTERM or CNTL +C inside of a Program. 
 
-# wait for all pids
-for pid in ${pids[*]}; do
-    wait $pid
-done
+
 printf "\n\nRunning Test Case $1 \n Input is :\n  $(<$1.test) \n\n" 
 printf "\nLooking For Expected Output :\n  $(<$1.exp)\n"
 printf "\nRecived Output :\n $(<$1.out)\n"
