@@ -2,14 +2,8 @@
 set -e
 
 readarray inputs < $1.test
-for element in "${inputs[@]}"
-do
-    printf "$element"
-done
-
-printf "`command -v timeout`"
-
 timeout 30s ./My_Alarm "${inputs[@]}" >> $1.out
+
 printf "`cat $1.out`"
 
  # Max time we will wait for a given test
