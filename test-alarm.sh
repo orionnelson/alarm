@@ -8,7 +8,7 @@ do
 done
 
 
-./a.out "${inputs[@]}" >> $1.out
+./a.out "5 chains" "4 cattle" "2 milk" >> $1.out
 
 
 sleep 40
