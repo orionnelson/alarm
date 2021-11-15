@@ -232,7 +232,7 @@ int main (int argc, char *argv[])
         
         
         
-        if (fgets (line, sizeof (line), stdin) == NULL) exit (0);
+        
         
         
         
@@ -247,6 +247,9 @@ int main (int argc, char *argv[])
         if (sz > 1 && sz > (i+1)){
         strcpy(line,argv[i+1]);
         i++;
+        }else{
+        if (fgets (line, sizeof (line), stdin) == NULL) exit (0);
+        
         }
         //if(line2 != NULL) use line2 as the version 
         if (strlen (line) <= 1) continue;
