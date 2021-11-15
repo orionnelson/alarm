@@ -11,7 +11,7 @@ done
 ./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out
 
 
-if test "`find $1.out -mmin +0.5`"
+echo test "`find $1.out -mmin +0.5`"
 
 
 
