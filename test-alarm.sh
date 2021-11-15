@@ -2,6 +2,7 @@
 set -e
 
 readarray inputs < $1.test
+
 timeout 30s ./My_Alarm "${inputs[@]}" >> $1.out
 
 printf "`cat $1.out`"
