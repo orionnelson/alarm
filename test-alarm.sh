@@ -8,7 +8,7 @@ do
 done
 
 
-sleep 30 | ./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out & ps -fj; echo "$!"
+sleep 30 | ./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out & ps -fj; echo "$!"; echo `jobs -l`
 
 
  # Max time we will wait for a given test
