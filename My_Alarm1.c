@@ -205,6 +205,11 @@ int main (int argc, char *argv[])
     pthread_t d2_thread; /* Display thread 2 */
     int alarm_counter = 1;
     int i = 0;
+	
+	//DEBUG
+	  for(int i=0; i < argc; i++) {
+    printf("Command line arg %2d: %s\n", i, argv[i]);
+  }
 
     status = pthread_create (
         &a_thread, NULL, alarm_thread, NULL);
