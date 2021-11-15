@@ -8,7 +8,7 @@ do
 done
 
 
-./a.out "5 chains" "4 cattle" "2 milk" >> $1.out &
+./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out &
 
 sleep 40
 killall My_Alarm
