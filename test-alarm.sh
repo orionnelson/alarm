@@ -8,8 +8,9 @@ do
 done
 
 
-./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out &
+./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out
 wait %1
+
 
  # Max time we will wait for a given test
 #get the process Id of teh
