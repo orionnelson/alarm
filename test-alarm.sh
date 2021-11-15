@@ -8,7 +8,8 @@ do
 done
 
 
-sleep 30 | ./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out & 
+./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out & 
+sleep 30
 ps -fj; echo "$!"; echo `jobs -l`
 #kill %1 
 
