@@ -8,8 +8,9 @@ do
 done
 
 
-sleep 30 | ./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out & ps -fj; echo "$!"; echo `jobs -l`
-
+sleep 30 | ./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out & 
+ps -fj; echo "$!"; echo `jobs -l`
+#kill %1 
 
  # Max time we will wait for a given test
 #get the process Id of teh
