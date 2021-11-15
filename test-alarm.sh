@@ -8,13 +8,9 @@ do
 done
 
 
-./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out
-echo test "`find $1.out -mmin +0.5`"
+timeout 30s ./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out
 
 
-
-sleep 30
-ps -fj; echo "$!"; echo `jobs -l`
 #kill %1 
 
  # Max time we will wait for a given test
