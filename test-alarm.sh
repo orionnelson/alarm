@@ -9,7 +9,7 @@ done
 
 
 ./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out
-wait %%
+wait %+
 
 
  # Max time we will wait for a given test
