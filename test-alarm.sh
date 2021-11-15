@@ -8,8 +8,10 @@ do
 done
 
 
-./a.out "${inputs[@]}" >> $1.out 2>&1 
-wait -n
+./a.out "${inputs[@]}" >> $1.out
+
+
+sleep 40
 #p=`echo $!`
  # Max time we will wait for a given test
 #get the process Id of teh
