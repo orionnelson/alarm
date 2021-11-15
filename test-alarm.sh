@@ -2,8 +2,7 @@
 set -e
 input=`cat $1.test`
 ./a.out $input >> $1.out 2>&1 
-#pid=`pidof a.out`
-p=$(pidof a.out)
+p=`echo $!`
 sleep 100 # Max time we will wait for a given test
 #get the process Id of teh
 wait -n
