@@ -9,9 +9,15 @@ done
 
 
 ./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out &
-echo `cat $1.out`
-sleep 40
-echo `cat $1.out`
+n_procs=$!
+for i in $n_procs; do
+    ./procs[${i}] &
+    pids[${i}]=$!
+done
+# wait for all pids
+for pid in ${pids[*]}; do
+    wait $pid
+done
 
  # Max time we will wait for a given test
 #get the process Id of teh
