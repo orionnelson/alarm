@@ -3,6 +3,11 @@ set -e
 input=`cat $1.test`
 IFS='\n' read -r -a inputs <<< "$input"
 
+for element in "${inputs[@]}"
+do
+    printf "$element"
+done
+
 
 ./a.out $inputs >> $1.out 2>&1 
 #p=`echo $!`
