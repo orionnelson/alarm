@@ -9,8 +9,9 @@ done
 
 
 ./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out &
-
+echo `cat $1.out`
 sleep 40
+echo `cat $1.out`
 
  # Max time we will wait for a given test
 #get the process Id of teh
