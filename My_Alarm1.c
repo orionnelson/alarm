@@ -233,7 +233,6 @@ int main (int argc, char *argv[])
         strcpy(line,argv[i+1]);
         i++;
         }else{
-	if (argc > 1) exit (0);
         if (fgets (line, sizeof (line), stdin) == NULL) exit (0);
         }
         /* 
