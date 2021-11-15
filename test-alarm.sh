@@ -1,7 +1,10 @@
 #!/bin/sh
 set -e
 input=`cat $1.test`
-./a.out `$input` >> $1.out 2>&1 
+IFS='\n' read -r -a inputs <<< "$input"
+
+
+./a.out $inputs >> $1.out 2>&1 
 #p=`echo $!`
 sleep 40 # Max time we will wait for a given test
 #get the process Id of teh
