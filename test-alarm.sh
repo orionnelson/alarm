@@ -9,8 +9,9 @@ done
 
 
 ./a.out "${inputs[@]}" >> $1.out 2>&1 
+wait -n
 #p=`echo $!`
-sleep 40 # Max time we will wait for a given test
+ # Max time we will wait for a given test
 #get the process Id of teh
 #kill -15 $p # 15 is the code for SIGTERM or CNTL +C inside of a Program. 
 
