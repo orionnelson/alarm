@@ -1,8 +1,7 @@
 #!/bin/sh
 set -e
-input=`cat $1.test`
-readarray -t inputs <<<"$input"
 
+readarray inputs < $1.test
 for element in "${inputs[@]}"
 do
     printf "$element"
