@@ -9,9 +9,8 @@ done
 
 
 timeout 30s ./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out
-
-
-#kill %1 
+wait $!
+kill -INT %1 
 
  # Max time we will wait for a given test
 #get the process Id of teh
