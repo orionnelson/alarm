@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 input=`cat $1.test`
-IFS='\n' read -r -a inputs <<< "$input"
+IFS='\n' read -rd '' -a inputs <<< "$input"
 
 for element in "${inputs[@]}"
 do
