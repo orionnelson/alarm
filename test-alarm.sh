@@ -12,6 +12,7 @@ done
 
 sleep 40
 killall -l
+pgrep My_Alarm
 killall -s SIGINT `pgrep My_Alarm`
  # Max time we will wait for a given test
 #get the process Id of teh
