@@ -8,7 +8,13 @@ do
 done
 
 
-./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out & 
+./My_Alarm "5 chains" "4 cattle" "2 milk" >> $1.out
+
+
+if test "`find $1.out -mmin +0.5`"
+
+
+
 sleep 30
 ps -fj; echo "$!"; echo `jobs -l`
 #kill %1 
