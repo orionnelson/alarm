@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 echo "HERE IS TIMEOUT"
-sleep 45
+sleep 30
 
 
 
