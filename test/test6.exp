@@ -1,11 +1,21 @@
-alarm> Start_Alarm(5678): 30 hey
-Alarm 5678 Inserted Into Alarm List at 1605568942: 1605568972  hey 
-New Display Alarm Thread -402942208 Created at 1605568942: 1605568972  hey 
-alarm> Display Thread -402942208 Assigned Alarm 5678 at 1605568942: 1605568972  hey 
-alarm> Start_Alarm(6587): 10 hi
-Alarm 6587 Inserted Into Alarm List at 1605568947: 1605568957  hi 
-alarm> Display Thread -402942208 Assigned Alarm 6587 at 1605568947: 1605568957  hi 
-Display Alarm Thread -402942208 Exiting at 1605568947
-alarm> Cancel_Alarm(5678)
-alarm> Alarm 5678 Canceled at 1605568954 : 30  hey 
-alarm> The alarm with ID 6587 set at 10 secs is ringing with message  hi
+alarm> Main Thread Received Alarm Request Number: (1) Alarm Request: <Folder> 
+alarm> Main Thread Received Alarm Request Number: (2) Alarm Request: <File> 
+alarm> Main Thread Received Alarm Request Number: (3) Alarm Request: <Plant> 
+alarm> Main Thread Received Alarm Request Number: (4) Alarm Request: <Error> 
+alarm> Main Thread Received Alarm Request Number: (5) Alarm Request: <Pass> 
+alarm> Alarm Thread Passed on Alarm Request to Display Thread 2 Alarm Request Number: (4) Alarm Request: Error 
+Display Thread 2: Recieved Alarm Request Number:(4) Alarm Request: <Error> 
+Display Thread 2: Alarm Expired at 1637032276: Alarm Request Number: (4) Alarm Request Error 
+Alarm Thread Passed on Alarm Request to Display Thread 2 Alarm Request Number: (2) Alarm Request: File 
+Display Thread 2: Recieved Alarm Request Number:(2) Alarm Request: <File> 
+Display Thread 2: Alarm Expired at 1637032277: Alarm Request Number: (2) Alarm Request File 
+Alarm Thread Passed on Alarm Request to Display Thread 1 Alarm Request Number: (1) Alarm Request: Folder 
+ Display Thread 1: Recieved Alarm Request Number:(1) Alarm Request: <Folder> 
+Display Thread 1: Alarm Expired at 1637032278: Alarm Request Number: (1) Alarm Request Folder 
+Alarm Thread Passed on Alarm Request to Display Thread 1 Alarm Request Number: (3) Alarm Request: Plant 
+ Display Thread 1: Recieved Alarm Request Number:(3) Alarm Request: <Plant> 
+Display Thread 1: Alarm Expired at 1637032279: Alarm Request Number: (3) Alarm Request Plant 
+Alarm Thread Passed on Alarm Request to Display Thread 1 Alarm Request Number: (5) Alarm Request: Pass 
+ Display Thread 1: Recieved Alarm Request Number:(5) Alarm Request: <Pass> 
+Display Thread 1: Number of SecondsLeft <1>: Alarm Request Number: (5) Alarm Request: <Pass> 
+Display Thread 1: Alarm Expired at 1637032282: Alarm Request Number: (5) Alarm Request Pass 

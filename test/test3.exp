@@ -1,7 +1,26 @@
-alarm> Start_Alarm(7685): 200 hi
-Alarm 7685 Inserted Into Alarm List at 1605568434: 1605568634  hi 
-New Display Alarm Thread 130995968 Created at 1605568434: 1605568634  hi 
-alarm> Display Thread 130995968 Assigned Alarm 7685 at 1605568434: 1605568634  hi 
-alarm> Change_Alarm(7685): 5 bye
-Alarm(7685) Changed at 1605568443: 1605568448  bye 
-alarm> The alarm with ID 7685 set at 5 secs is ringing with message  bye 
+alarm> Main Thread Received Alarm Request Number: (1) Alarm Request: <hello> 
+alarm> Main Thread Received Alarm Request Number: (2) Alarm Request: <hi> 
+Bad command
+alarm> alarm> Main Thread Received Alarm Request Number: (3) Alarm Request: <seafood> 
+Bad command
+alarm> alarm> Main Thread Received Alarm Request Number: (4) Alarm Request: <88 8> 
+alarm> Main Thread Received Alarm Request Number: (5) Alarm Request: <chicken> 
+alarm> Alarm Thread Passed on Alarm Request to Display Thread 2 Alarm Request Number: (2) Alarm Request: hi 
+Display Thread 2: Recieved Alarm Request Number:(2) Alarm Request: <hi> 
+Display Thread 2: Number of SecondsLeft <2>: Alarm Request Number: (2) Alarm Request: <hi> 
+Display Thread 2: Alarm Expired at 1637032176: Alarm Request Number: (2) Alarm Request hi 
+Alarm Thread Passed on Alarm Request to Display Thread 1 Alarm Request Number: (1) Alarm Request: hello 
+ Display Thread 1: Recieved Alarm Request Number:(1) Alarm Request: <hello> 
+Display Thread 1: Number of SecondsLeft <4>: Alarm Request Number: (1) Alarm Request: <hello> 
+Display Thread 1: Number of SecondsLeft <2>: Alarm Request Number: (1) Alarm Request: <hello> 
+Display Thread 1: Alarm Expired at 1637032180: Alarm Request Number: (1) Alarm Request hello 
+Alarm Thread Passed on Alarm Request to Display Thread 2 Alarm Request Number: (4) Alarm Request: 88 8 
+Display Thread 2: Recieved Alarm Request Number:(4) Alarm Request: <88 8> 
+Display Thread 2: Number of SecondsLeft <1>: Alarm Request Number: (4) Alarm Request: <88 8> 
+Display Thread 2: Alarm Expired at 1637032182: Alarm Request Number: (4) Alarm Request 88 8 
+Alarm Thread Passed on Alarm Request to Display Thread 1 Alarm Request Number: (3) Alarm Request: seafood 
+ Display Thread 1: Recieved Alarm Request Number:(3) Alarm Request: <seafood> 
+Display Thread 1: Alarm Expired at 1637032182: Alarm Request Number: (3) Alarm Request seafood 
+Alarm Thread Passed on Alarm Request to Display Thread 1 Alarm Request Number: (5) Alarm Request: chicken 
+ Display Thread 1: Recieved Alarm Request Number:(5) Alarm Request: <chicken> 
+Display Thread 1: Alarm Expired at 1637032183: Alarm Request Number: (5) Alarm Request chicken 
