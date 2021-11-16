@@ -207,9 +207,9 @@ int main (int argc, char *argv[])
     int i = 0;
 	
 	//DEBUG
-	  for(int i=0; i < argc; i++) {
-    printf("Command line arg %2d: %s\n", i, argv[i]);
-  }
+	//  for(int i=0; i < argc; i++) {
+   // printf("Command line arg %2d: %s\n", i, argv[i]);
+ // }
 
     status = pthread_create (
         &a_thread, NULL, alarm_thread, NULL);
