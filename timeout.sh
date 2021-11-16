@@ -1,6 +1,7 @@
 #!/bin/sh
 set -e
-sleep 32
+printf "running 2"
+#sleep 32
 
 
 
