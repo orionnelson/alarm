@@ -4,10 +4,10 @@ set -e
 
 #"${inputs[@]}"
 
-printf "HERE IS TEST ALARM"
+#printf "HERE IS TEST ALARM"
 readarray inputs < $1.test
 rm -f $1.out
-printf "$1.out"
+printf "$1.out is the test being run"
 sleep 1
 unbuffer timeout -s SIGINT 30s ./My_Alarm "${inputs[@]}" >> $1.out
 
