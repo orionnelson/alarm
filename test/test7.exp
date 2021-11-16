@@ -1,7 +1,27 @@
-alarm> Start_Alarm(7685): 200 hi
-Alarm 7685 Inserted Into Alarm List at 1605569161: 1605569361  hi 
-New Display Alarm Thread -926669056 Created at 1605569161: 1605569361  hi 
-alarm> Display Thread -926669056 Assigned Alarm 7685 at 1605569161: 1605569361  hi 
-alarm> View_Alarms
-View Alarms at 1605569169:
-Display Thread -926669056 Assigned:  Alarm(7685): Created at 1605569161 Assigned at 1605569161 <1605569361  hi>
+alarm> Main Thread Received Alarm Request Number: (1) Alarm Request: <Cats> 
+alarm> Main Thread Received Alarm Request Number: (2) Alarm Request: <Dogs > 
+alarm> Main Thread Received Alarm Request Number: (3) Alarm Request: <Parrot> 
+alarm> Main Thread Received Alarm Request Number: (4) Alarm Request: <Ants> 
+alarm> Main Thread Received Alarm Request Number: (5) Alarm Request: <Birds> 
+Bad command
+alarm> alarm> Alarm Thread Passed on Alarm Request to Display Thread 1 Alarm Request Number: (3) Alarm Request: Parrot 
+ Display Thread 1: Recieved Alarm Request Number:(3) Alarm Request: <Parrot> 
+Display Thread 1: Alarm Expired at 1637032311: Alarm Request Number: (3) Alarm Request Parrot 
+Alarm Thread Passed on Alarm Request to Display Thread 1 Alarm Request Number: (5) Alarm Request: Birds 
+ Display Thread 1: Recieved Alarm Request Number:(5) Alarm Request: <Birds> 
+Display Thread 1: Alarm Expired at 1637032312: Alarm Request Number: (5) Alarm Request Birds 
+Alarm Thread Passed on Alarm Request to Display Thread 1 Alarm Request Number: (1) Alarm Request: Cats 
+ Display Thread 1: Recieved Alarm Request Number:(1) Alarm Request: <Cats> 
+Display Thread 1: Number of SecondsLeft <1>: Alarm Request Number: (1) Alarm Request: <Cats> 
+Display Thread 1: Alarm Expired at 1637032315: Alarm Request Number: (1) Alarm Request Cats 
+Alarm Thread Passed on Alarm Request to Display Thread 2 Alarm Request Number: (2) Alarm Request: Dogs  
+Display Thread 2: Recieved Alarm Request Number:(2) Alarm Request: <Dogs > 
+Display Thread 2: Alarm Expired at 1637032315: Alarm Request Number: (2) Alarm Request Dogs  
+Alarm Thread Passed on Alarm Request to Display Thread 2 Alarm Request Number: (4) Alarm Request: Ants 
+Display Thread 2: Recieved Alarm Request Number:(4) Alarm Request: <Ants> 
+Display Thread 2: Number of SecondsLeft <9>: Alarm Request Number: (4) Alarm Request: <Ants> 
+Display Thread 2: Number of SecondsLeft <7>: Alarm Request Number: (4) Alarm Request: <Ants> 
+Display Thread 2: Number of SecondsLeft <5>: Alarm Request Number: (4) Alarm Request: <Ants> 
+Display Thread 2: Number of SecondsLeft <3>: Alarm Request Number: (4) Alarm Request: <Ants> 
+Display Thread 2: Number of SecondsLeft <1>: Alarm Request Number: (4) Alarm Request: <Ants> 
+Display Thread 2: Alarm Expired at 1637032326: Alarm Request Number: (4) Alarm Request Ants 
