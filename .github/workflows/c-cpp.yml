@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: install unbuffer
-      run: apt-get install expect
+      run: sudo apt-get install expect
     - name: make
       run: make
     - name: make check
