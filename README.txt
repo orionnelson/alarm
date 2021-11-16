@@ -10,7 +10,7 @@ To Activate Automated Testing
 
 3. To activate testing and run the shell scrips
 
-     `make check` Runs automated test cases after manually adjusting wait time for tests in alarm-shell.sh.
+     `make check` Runs automated test cases after manually adjusting wait time for tests in test-alarm.sh.
 
 3. Type `./My_Alarm "input1" "input2"` for lazy testing of a set of args.
 
