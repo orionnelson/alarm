@@ -1,11 +1,15 @@
-Alarm 6587 Inserted Into Alarm List at 1605569422: 1605569522  hi 
-New Display Alarm Thread -1952692480 Created at 1605569422: 1605569522  hi 
-alarm> Display Thread -1952692480 Assigned Alarm 6587 at 1605569422: 1605569522  hi 
-alarm> Start_Alarm(5678): 300 hey
-Alarm 5678 Inserted Into Alarm List at 1605569428: 1605569728  hey 
-alarm> Display Thread -1952692480 Assigned Alarm 5678 at 1605569428: 1605569728  hey 
-Display Alarm Thread -1952692480 Exiting at 1605569428
-alarm> Start_Alarm(7685): 200 hi
-Alarm 7685 Inserted Into Alarm List at 1605569434: 1605569634  hi 
-New Display Alarm Thread -1980057856 Created at 1605569434: 1605569634  hi 
-alarm> Display Thread -1980057856 Assigned Alarm 7685 at 1605569434: 1605569634  hi
+alarm> Main Thread Received Alarm Request Number: (1) Alarm Request: <0 \Hey> 
+Bad command
+alarm> alarm> Main Thread Received Alarm Request Number: (2) Alarm Request: <Breaks> 
+alarm> Main Thread Received Alarm Request Number: (3) Alarm Request: <expect> 
+alarm> Alarm Thread Passed on Alarm Request to Display Thread 1 Alarm Request Number: (1) Alarm Request: 0 \Hey 
+ Display Thread 1: Recieved Alarm Request Number:(1) Alarm Request: <0 \Hey> 
+Display Thread 1: Alarm Expired at 1637032345: Alarm Request Number: (1) Alarm Request 0 \Hey 
+Alarm Thread Passed on Alarm Request to Display Thread 1 Alarm Request Number: (3) Alarm Request: expect 
+ Display Thread 1: Recieved Alarm Request Number:(3) Alarm Request: <expect> 
+Display Thread 1: Alarm Expired at 1637032346: Alarm Request Number: (3) Alarm Request expect 
+Alarm Thread Passed on Alarm Request to Display Thread 2 Alarm Request Number: (2) Alarm Request: Breaks 
+Display Thread 2: Recieved Alarm Request Number:(2) Alarm Request: <Breaks> 
+Display Thread 2: Number of SecondsLeft <3>: Alarm Request Number: (2) Alarm Request: <Breaks> 
+Display Thread 2: Number of SecondsLeft <1>: Alarm Request Number: (2) Alarm Request: <Breaks> 
+Display Thread 2: Alarm Expired at 1637032351: Alarm Request Number: (2) Alarm Request Breaks 
