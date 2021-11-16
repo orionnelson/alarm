@@ -1,21 +1,25 @@
-1. First copy the files "new_alarm_mutex.c", and "errors.h" into your
-   own directory.
 
-2. change makefile.txt to makefile
+Testing Instructions
 
-3. To compile the program "new_alarm_mutex.c", use the following command:
 
-      make
+To Activate Automated Testing 
 
-3. Type "a.out" to run the executable code.
+1. First ```sudo apt-get install expects```
+
+2. ``` make ``` Compiles the program
+
+3. To activate testing and run the shell scrips
+
+     ``` make check ``` Runs automated test cases after manually adjusting wait time in sh scrips for timeout and sleep.
+
+3. Type ./My_Alarm "input1" "input2" for lazy testing of a set of args.
 
 4. At the prompt "ALARM>", type in the specific alarm request that is needed.
    These commands will perform the tasks mentioned inside the assignment rubric.
 
-   ALARM> Start_Alarm(<alarm ID>): time message
-   ALARM> Change_Alarm(alarm ID): time message
-   ALARM> Cancel_Alarm(alarm ID): time message
-   ALARM> View_Alarms
+   alarm>60 Egg Has Boiled
+   alarm>20 Start Toaster 
+   alarm>65 Grab Plate cooking
 
-  (To exit from the program, type Ctrl-d.)
+  (To exit from the program, type Ctrl-C.)
 
