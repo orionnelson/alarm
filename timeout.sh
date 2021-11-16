@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
-echo $1
+echo "HERE IS TIMEOUT"
 sleep 35
 
 printf "\n\nRunning Test Case $1 \n Input is :\n  $(<$1.test) \n\n" 
